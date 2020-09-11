@@ -1,77 +1,3 @@
-/*
-COLORS:
-
-Light green: #7ED56F
-Medium green: #55C57A
-Dark green: #28B485
-
-*/
-*,
-*::after,
-*::before {
-  padding: 0;
-  margin: 0;
-  box-sizing: inherit; }
-
-html {
-  /* font-size/16 = % example = 10/16 =62.5% */
-  font-size: 62.5%; }
-
-body {
-  font-family: "Lato", sans-serif;
-  /* font-size: 16px; */
-  font-weight: 400;
-  line-height: 1.7;
-  color: #FFF;
-  padding: 3rem;
-  box-sizing: border-box; }
-
-.header {
-  height: 95vh;
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
-  background-position: top;
-  background-size: cover;
-  position: relative;
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
-
-.header__logo-box {
-  position: absolute;
-  top: 2rem;
-  left: 2rem; }
-
-.header__logo {
-  height: 3.5rem; }
-
-.header__text-box {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center; }
-
-.heading-primary {
-  font-weight: 400;
-  color: #FFF;
-  text-transform: uppercase;
-  /* hidden efek shaking (gemetar) after animation completed. */
-  backface-visibility: hidden;
-  margin-bottom: 6rem; }
-
-.heading-primary--main {
-  display: block;
-  font-size: 6rem;
-  letter-spacing: 3.5rem;
-  animation-name: moveInLeft;
-  animation-duration: 1s;
-  /* mempercepat efek */
-  animation-timing-function: ease-out; }
-
-.heading-primary--sub {
-  display: block;
-  font-size: 2rem;
-  letter-spacing: 1.75rem;
-  animation: moveInRight 1s ease-out; }
-
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -96,8 +22,50 @@ body {
     opacity: 1;
     transform: translateY(0); } }
 
-.btn:link,
-.btn:visited {
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit; }
+
+html {
+  /* font-size/16 = % example = 10/16 =62.5% */
+  font-size: 62.5%; }
+
+body {
+  box-sizing: border-box; }
+
+body {
+  font-family: "Lato", sans-serif;
+  /* font-size: 16px; */
+  font-weight: 400;
+  line-height: 1.7;
+  color: #FFF;
+  padding: 3rem; }
+
+.heading-primary {
+  font-weight: 400;
+  color: #FFF;
+  text-transform: uppercase;
+  /* hidden efek shaking (gemetar) after animation completed. */
+  backface-visibility: hidden;
+  margin-bottom: 6rem; }
+  .heading-primary--main {
+    display: block;
+    font-size: 6rem;
+    letter-spacing: 3.5rem;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    /* mempercepat efek */
+    animation-timing-function: ease-out; }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    letter-spacing: 1.75rem;
+    animation: moveInRight 1s ease-out; }
+
+.btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
   padding: 1.5rem 4rem;
@@ -105,17 +73,22 @@ body {
   border-radius: 10rem;
   position: relative; }
 
-.btn--white:hover {
+.btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+  .btn:hover::after {
+    opacity: 0;
+    transform: scale(1.5); }
 
-.btn--white:active {
+.btn:active {
   transform: translateY(-1px);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
 
 .btn--white {
   color: #777;
   background-color: #FFF; }
+  .btn--white::after {
+    background-color: #FFF; }
 
 .btn::after {
   content: "";
@@ -129,13 +102,26 @@ body {
   z-index: -1;
   transition: all .5s; }
 
-.btn--white::after {
-  background-color: #FFF; }
-
-.btn:hover::after {
-  opacity: 0;
-  transform: scale(1.5); }
-
 .btn--animated {
   animation: moveInBottom .5s ease-out .7s;
   animation-fill-mode: backwards; }
+
+.header {
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  background-position: top;
+  background-size: cover;
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
+  .header__logo-box {
+    position: absolute;
+    top: 2rem;
+    left: 2rem; }
+  .header__logo {
+    height: 3.5rem; }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; }
