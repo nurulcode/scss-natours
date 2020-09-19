@@ -1,0 +1,24 @@
+CSS Dasar,
+
+section one
+
+1. we need reset css in browser, in a way 
+
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+2. reset global font size and hidden border-box in a way use 'rem' where 1rem equals 10px 
+
+html {
+    /* font-size/16 = % example = 10/16 =62.5% */
+    font-size: 62.5%;
+}
+
+body {
+    box-sizing: border-box;
+}
